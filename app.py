@@ -3,7 +3,7 @@ import numpy as np
 from transformers import BertTokenizer, BertForSequenceClassification
 import torch
 
-@st.cache_resource(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True)
 def get_model():
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     model = BertForSequenceClassification.from_pretrained("pnichite/YTFineTuneBert")
